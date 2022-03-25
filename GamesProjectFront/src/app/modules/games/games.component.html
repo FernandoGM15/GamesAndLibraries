@@ -1,0 +1,19 @@
+<div class="d-flex justify-content-end mt-3 me-3">
+  <button mat-raised-button (click)="openCreateComponent()">Add Game</button>
+</div>
+
+<div class="row">
+  <div class="col-md-4 mt-3 mb-3" *ngFor="let game of games">
+    <mat-card>
+      <mat-card-header class="d-flex align-items-center">
+        <mat-card-title>{{ game.name }}</mat-card-title>
+        <mat-card-subtitle>{{ game.developer }}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="{{ game.image }}" alt="Photo of a Shiba Inu" />
+      <mat-card-actions class="d-flex justify-content-between">
+        <button mat-raised-button (click)="editGame(game)">Edit</button>
+        <button mat-raised-button >Add to Library</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<h2 mat-dialog-title>Add Game</h2>
+<mat-dialog-content class="mat-typography">
+  <form id="form-game" [formGroup]="formGame" (submit)="addGame()">
+    <div class="row">
+      <mat-form-field class="col-md-6" appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name"/>
+      </mat-form-field>
+      <mat-form-field class="col-md-3" appearance="fill">
+        <mat-label>Genre</mat-label>
+        <input matInput formControlName="genre"/>
+      </mat-form-field>
+      <mat-form-field class="col-md-3" appearance="fill">
+        <mat-label>Release Year</mat-label>
+        <input matInput formControlName="releaseYear"/>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field class="col-md-4" appearance="fill">
+        <mat-label>Developer</mat-label>
+        <input matInput formControlName="developer"/>
+      </mat-form-field>
+      <mat-form-field class="col-md-8" appearance="fill">
+        <mat-label>Image (URL)</mat-label>
+        <input matInput formControlName="image"/>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field class="col-md-12" appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="description"></textarea>
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-raised-button mat-dialog-close>Cancel</button>
+  <button mat-raised-button form="form-game">{{actionBtn}}</button>
+</mat-dialog-actions>

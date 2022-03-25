@@ -1,0 +1,18 @@
+
+::ng-deep  mat-dialog-container {
+  background-color: #17191D !important;
+  color: white !important;
+}
+
+mat-label{
+  color: white !important;
+}
+
+.mat-form-field-label{
+  color: white !important;
+}
+
+button{
+  background-color: #14161a;
+  color:white;
+}

@@ -1,0 +1,22 @@
+button{
+  background-color: #14161a;
+  color:white;
+}
+
+mat-card{
+  background-color:#2D3035;
+  color:white;
+}
+
+mat-card-header{
+  height:5rem;
+}
+
+mat-card-subtitle{
+  color:white;
+}
+
+.mat-card-image{
+  height: 18rem;
+}
+
