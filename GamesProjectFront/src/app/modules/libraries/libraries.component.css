@@ -1,0 +1,23 @@
+table{
+  width: 90%;
+  background-color: #2D3035;
+
+}
+
+mat-label{
+  color: white;
+}
+
+.mat-cell, .mat-header-cell, .mat-footer-cell{
+  color: white;
+  text-align: center;
+}
+
+.mat-column-id, .mat-column-createdAt, .mat-column-actions{
+  width: 10%;
+}
+
+.mat-column-name{
+  width: 70%;
+}
+
