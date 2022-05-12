@@ -12,7 +12,7 @@
       <img mat-card-image src="{{ game.image }}" alt="Photo of a Shiba Inu" />
       <mat-card-actions class="d-flex justify-content-between">
         <button mat-raised-button (click)="editGame(game)">Edit</button>
-        <button mat-raised-button >Add to Library</button>
+        <button mat-raised-button (click)="addToLibrary(game)">Add to Library</button>
       </mat-card-actions>
     </mat-card>
   </div>

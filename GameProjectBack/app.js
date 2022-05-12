@@ -8,7 +8,6 @@ const app = express();
 
 //SETEO DE PUERTO Y HOST
 app.set("port", process.env.PORT || 3000);
-app.set("host", process.env.HOST || "127.0.0.1");
 
 //MIDDLEWARE
 app.use(morgan("dev"));
@@ -29,6 +28,6 @@ app.use("/api/libraries", libraryRoutes);
 app.use(express.static(path.join(__dirname, "public")))
 
 //SETEO DE SERVER
-app.listen(app.get("port"), app.get("host"), () => {
-  console.log(`App listening on http://${app.get("host")}:${app.get("port")}`);
+app.listen(app.get("port"), () => {
+  console.log(`App listening on port ${app.get("port")}`);
 });

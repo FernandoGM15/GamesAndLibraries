@@ -6,6 +6,7 @@ import { GamesComponent } from './games.component';
 import { MaterialModule } from 'src/app/material.module';
 import { CreateComponent } from './create/create.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LibrariesDialogComponent } from './libraries-dialog/libraries-dialog.component';
 
 
 
@@ -13,7 +14,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     GamesComponent,
-    CreateComponent
+    CreateComponent,
+    LibrariesDialogComponent
   ],
   imports: [
     CommonModule,

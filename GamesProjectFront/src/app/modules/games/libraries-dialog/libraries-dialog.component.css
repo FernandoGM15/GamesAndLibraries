@@ -1,0 +1,23 @@
+::ng-deep mat-dialog-container {
+  background-color: #22252A !important;
+  color: white !important;
+}
+
+mat-label {
+  color: white !important;
+}
+
+::ng-deep .mat-select-panel {
+  background: #22252A;
+}
+
+::ng-deep .mat-pseudo-checkbox{
+  background-color: white;
+}
+
+::ng-deep
+.mat-select-value,
+.mat-option
+{
+  color:white !important;
+}

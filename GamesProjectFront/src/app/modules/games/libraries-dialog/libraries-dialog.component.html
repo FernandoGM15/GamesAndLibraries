@@ -1,0 +1,17 @@
+<h2 mat-dialog-title>Libraries</h2>
+<mat-dialog-content class="mat-typography">
+  <form id="form-game-library" [formGroup]="formGameLibrary" (submit)="addGameToLibrary()">
+    <div class="row">
+      <mat-form-field class="col-md-12" appearance="fill">
+        <mat-label>Select libraries to add</mat-label>
+        <mat-select multiple formControlName="libraries">
+          <mat-option *ngFor="let library of libraries" [value]="library.id">{{library.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-raised-button mat-dialog-close>Cancel</button>
+  <button mat-raised-button form="form-game-library">Add game</button>
+</mat-dialog-actions>

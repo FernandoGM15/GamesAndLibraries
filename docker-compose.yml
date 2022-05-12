@@ -1,0 +1,49 @@
+version: "3.3"
+services:
+  mysqldb:
+    image: mysql:5.7
+    container_name: mysqldb
+    restart: unless-stopped
+    env_file:
+      - ./.env
+    environment:
+      - MYSQL_USER=$MYSQLDB_USER
+      - MYSQL_PASSWORD=$MYSQLDB_ROOT_PASSWORD
+      - MYSQL_ROOT_PASSWORD=$MYSQLDB_ROOT_PASSWORD
+      - MYSQL_DATABASE=$MYSQLDB_DATABASE
+      - TZ=America/Mexico_City
+    command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_general_ci','--default-time-zone=-05:00']
+    ports:
+      - 3306:3306
+    volumes:
+      - ./db/conf.d:/etc/mysql/conf.d
+    networks:
+      - game_app
+    
+  node:
+    depends_on:
+      - mysqldb
+    build: ./GameProjectBack
+    container_name: gameProjectBack
+    env_file:
+      - ./.env
+    restart: always
+    ports:
+      - 3000:3000
+    environment:
+      - DB_HOST=mysqldb
+      - DB_USER=$MYSQLDB_USER
+      - DB_PASSWORD=$MYSQLDB_ROOT_PASSWORD
+      - DB_NAME=$MYSQLDB_DATABASE
+      - DB_PORT=3306
+    volumes:
+      - ./GameProjectBack:/GameProjectBack
+    networks:
+      - game_app
+# Names our volume
+volumes:
+  db:
+
+networks:
+  game_app:
+    driver: bridge

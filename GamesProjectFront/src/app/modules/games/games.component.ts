@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { GameService } from 'src/app/services/game.service';
 import { CreateComponent } from './create/create.component';
 import { Game } from 'src/app/interfaces/game.interface';
+import { LibrariesDialogComponent } from './libraries-dialog/libraries-dialog.component';
 
 @Component({
   selector: 'app-games',
@@ -43,10 +44,23 @@ export class GamesComponent implements OnInit {
       }
     })
   }
+
   //OBTIENE LOS REGiSTROS DE GameService y los almacena en variable games
   getGames(): void {
     this.gameService.getGames().subscribe((games:Game[]) => {
       this.games = games;
     });
+  }
+
+  //ABRE LA INTANCIA DEL COMPONENTE PARA AGREGAR EN LA LIBRERIA
+  addToLibrary(game:Game):void{
+    this.dialog.open(LibrariesDialogComponent,{
+      width: '60%',
+      data: game
+    }).afterClosed().subscribe(res=>{
+      if(res){
+        console.log("Game added to library successfully");
+      }
+    })
   }
 }
