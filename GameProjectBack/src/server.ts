@@ -3,6 +3,7 @@ import morgan from "morgan";
 import cors from "cors";
 import GameRouter from "./routes/GameRouter";
 import LibraryRouter from "./routes/LibraryRouter";
+import GameLibraryRouter from "./routes/GameLibraryRouter";
 
 class Server {
 
@@ -25,6 +26,7 @@ class Server {
     private routes():void{
         this.app.use("/api/games", GameRouter);
         this.app.use("/api/libraries", LibraryRouter);
+        this.app.use("/api/games-libraries",GameLibraryRouter);
     }
 
     private start() : void {

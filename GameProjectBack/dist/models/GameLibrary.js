@@ -38,5 +38,7 @@ GameLibrary.init({
     tableName: "game_libraries",
     timestamps: true
 });
+Game_1.default.hasOne(GameLibrary);
+Library_1.default.hasOne(GameLibrary);
 exports.default = GameLibrary;
 //# sourceMappingURL=GameLibrary.js.map

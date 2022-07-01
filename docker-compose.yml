@@ -16,7 +16,7 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - ./db/conf.d:/etc/mysql/conf.d
+      - db:/etc/mysql/conf.d
     networks:
       - game_app
     

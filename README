@@ -1,0 +1,26 @@
+# Games & Libraries
+This is a personal project, wich was created for the Sotfware Quality And Testing Class, Originally this project was made in Python 3, using flask and sqlite.
+
+Now this version is made as a MEAN STACK (taking the "M" for MYSQL ^^').
+
+## RUNNING THE APP
+This project requires docker.
+Once cloned the repository to the local run:
+```sh
+    docker compose up
+```
+
+Inside the project's folder, to deploy the node and mysql images from dockerhub.
+
+Next run:
+```sh
+    docker compose run node dist/models/Init
+```
+To generate the necessary tables into database, you can use a remote mysql database manager as Mysql Workbench to watch the created tables.
+
+Finally run:
+```sh
+    npm run start
+```
+
+Inside 'GamesProjectFront' folder, to initialize the angular's virtual server and test the app.

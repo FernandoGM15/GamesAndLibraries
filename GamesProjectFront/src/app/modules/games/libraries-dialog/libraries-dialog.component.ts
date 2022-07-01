@@ -31,7 +31,7 @@ export class LibrariesDialogComponent implements OnInit {
 
     this.formGameLibrary = this.formBuilder.group({
       libraries:["",Validators.required],
-      game:this.game.id
+      gameId:this.game.id
     })
   }
 
